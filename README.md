@@ -1,7 +1,7 @@
 
 ---
 
-# Proyecto Ejemplo
+# Proyecto "Lista de tareas"
 
 Este es un proyecto ejemplo que muestra cómo estructurar un README detallado explicando los archivos del proyecto.
 
