@@ -1,57 +1,39 @@
-import React, { useState } from 'react';
-import UserList from './components/UserList';
-import AddUserForm from './components/AddUserForm';
-import UserCounter from './components/contador';
-import DeleteUserButton from './components/eliminar'; // Corregir la importación si es necesario
-import './App.css'; // Archivo CSS para estilos personalizados
+import React, { useState, useEffect } from 'react';
+import Header from './components/Header'; // Importa Header desde la ubicación correcta
+import TodoForm from './components/TodoForm'; // Importa TodoForm desde la ubicación correcta
+import TodoList from './components/TodoList'; // Importa TodoList desde la ubicación correcta
+import './App.css';
 
-const App = () => {
-  const [users, setUsers] = useState([
- 
-  ]);
+function App() {
+  const [todos, setTodos] = useState([]);
 
-  const addUser = (name) => {
-    const newUser = { id: users.length + 1, name };
-    setUsers([...users, newUser]);
+  useEffect(() => {
+    const storedTodos = JSON.parse(localStorage.getItem('todos'));
+    if (storedTodos) {
+      setTodos(storedTodos);
+    }
+  }, []);
+
+  const handleAddTodo = (text) => {
+    const newTodos = [...todos, text];
+    setTodos(newTodos);
+    localStorage.setItem('todos', JSON.stringify(newTodos));
   };
 
-  const deleteUser = (userId) => {
-    // Filtra los usuarios para eliminar el usuario con el userId dado
-    const updatedUsers = users.filter(user => user.id !== userId);
-    setUsers(updatedUsers);
+  const handleDeleteTodo = (index) => {
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
+    setTodos(newTodos);
+    localStorage.setItem('todos', JSON.stringify(newTodos));
   };
 
   return (
-    <div className="container">
-      <header>
-        <h1>Administrador de Usuarios</h1>
-      </header>
-      <div className="content">
-        <section className="user-list">
-         
-          <UserList users={users}>
-            {users.map(user => (
-              <div key={user.id}>
-                <span>{user.name}</span>
-                <DeleteUserButton userId={user.id} deleteUser={deleteUser} />
-              </div>
-            ))}
-          </UserList>
-        </section>
-        <section className="add-user-form">
-          <h2>Agregar Nuevo Usuario</h2>
-          <AddUserForm addUser={addUser} />
-        </section>
-        <aside className="user-counter">
-          <h2>Contador de Usuarios</h2>
-          <UserCounter users={users} />
-        </aside>
-      </div>
-      <footer>
-        <p>&copy; 2024 Administrador by Geovanny JP</p>
-      </footer>
+    <div>
+      <Header />
+      <TodoForm onAdd={handleAddTodo} />
+      <TodoList todos={todos} onDelete={handleDeleteTodo} />
     </div>
   );
-};
+}
 
 export default App;
