@@ -1,7 +1,9 @@
+// App.js
 import React, { useState, useEffect } from 'react';
-import Header from './components/Header'; // Importa Header desde la ubicación correcta
-import TodoForm from './components/TodoForm'; // Importa TodoForm desde la ubicación correcta
-import TodoList from './components/TodoList'; // Importa TodoList desde la ubicación correcta
+import Header from './components/Header';
+import TodoForm from './components/TodoForm';
+import TodoList from './components/TodoList';
+import TodoItem from './components/TodoItem';
 import './App.css';
 
 function App() {
@@ -27,11 +29,23 @@ function App() {
     localStorage.setItem('todos', JSON.stringify(newTodos));
   };
 
+  const handleEditTodo = (index, newText) => {
+    const newTodos = [...todos];
+    newTodos[index] = newText;
+    setTodos(newTodos);
+    localStorage.setItem('todos', JSON.stringify(newTodos));
+  };
+
   return (
     <div>
       <Header />
       <TodoForm onAdd={handleAddTodo} />
-      <TodoList todos={todos} onDelete={handleDeleteTodo} />
+      <TodoList
+        todos={todos}
+        onDelete={handleDeleteTodo}
+        onEdit={handleEditTodo}
+        TodoItemComponent={TodoItem}
+      />
     </div>
   );
 }

@@ -1,55 +1,59 @@
-/* Estilos globales */
+/* App.css */
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f0f0f0;
-  color: #333; /* Color de texto predeterminado */
+  background-color: #f2f2f2;
 }
 
-/* Contenedor principal */
 .container {
   max-width: 800px;
-  margin: 20px auto;
+  margin: 0 auto;
   padding: 20px;
   background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Encabezado */
 header {
-  background-color: #333;
+  background-color: #4CAF50;
   color: #fff;
   padding: 20px;
   text-align: center;
-  border-radius: 10px 10px 0 0;
+  border-radius: 15px 15px 0 0;
 }
 
-/* Formulario */
 form {
   margin-bottom: 20px;
-  text-align: center;
+  display: flex;
+  justify-content: space-between; /* Alinear botones a la derecha */
+  align-items: center;
 }
 
 form input[type="text"] {
-  width: calc(100% - 120px);
-  padding: 10px;
+  width: calc(100% - 100px);
+  padding: 12px;
   margin-right: 10px;
-  border-radius: 5px;
+  border-radius: 25px;
   border: 1px solid #ccc;
+  font-size: 16px;
 }
 
 form button {
-  padding: 10px 20px;
-  background-color: #007bff;
+  padding: 12px 24px;
+  background-color: #007bff; /* Azul */
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
   cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
-/* Lista de tareas */
+form button:hover {
+  background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+}
+
 ul {
   list-style: none;
   padding: 0;
@@ -59,25 +63,24 @@ li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
+  padding: 20px;
   border-bottom: 1px solid #ccc;
 }
 
-/* Botón de eliminar */
-button {
-  background-color: #dc3545;
+button.edit-btn,
+button.delete-btn {
   color: #fff;
   border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
+  padding: 12px 24px;
+  border-radius: 25px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-/* Estilos adicionales para botones */
-button:hover {
-  opacity: 0.8;
+button.edit-btn:hover {
+  background-color: #ffa500; /* Naranja */
 }
 
-button:focus {
-  outline: none;
+button.delete-btn:hover {
+  background-color: #cc0000; /* Rojo */
 }
