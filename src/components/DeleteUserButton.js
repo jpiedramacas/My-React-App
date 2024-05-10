@@ -2,7 +2,6 @@ import React from 'react';
 
 const DeleteUserButton = ({ userId, deleteUser }) => {
   const handleClick = () => {
-    // Llama a la función deleteUser pasando el userId como parámetro
     deleteUser(userId);
   };
 
@@ -12,4 +11,3 @@ const DeleteUserButton = ({ userId, deleteUser }) => {
 };
 
 export default DeleteUserButton;
-

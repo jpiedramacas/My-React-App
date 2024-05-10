@@ -1,14 +1,19 @@
-import React, { useState } from 'react';
+// eslint-disable-next-line
+import React, { useState, useEffect } from 'react'; // eslint-disable-line no-unused-vars
 import UserList from './components/UserList';
 import AddUserForm from './components/AddUserForm';
-import UserCounter from './components/contador';
-import DeleteUserButton from './components/eliminar'; // Corregir la importación si es necesario
-import './App.css'; // Archivo CSS para estilos personalizados
+import UserCounter from './components/UserCounter';
+// eslint-disable-next-line
+import DeleteUserButton from './components/DeleteUserButton'; // eslint-disable-line no-unused-vars
+import './App.css';
 
 const App = () => {
-  const [users, setUsers] = useState([
- 
-  ]);
+  const savedUsers = JSON.parse(localStorage.getItem('users')) || [];
+  const [users, setUsers] = useState(savedUsers);
+
+  useEffect(() => {
+    localStorage.setItem('users', JSON.stringify(users));
+  }, [users]);
 
   const addUser = (name) => {
     const newUser = { id: users.length + 1, name };
@@ -16,7 +21,6 @@ const App = () => {
   };
 
   const deleteUser = (userId) => {
-    // Filtra los usuarios para eliminar el usuario con el userId dado
     const updatedUsers = users.filter(user => user.id !== userId);
     setUsers(updatedUsers);
   };
@@ -28,15 +32,8 @@ const App = () => {
       </header>
       <div className="content">
         <section className="user-list">
-         
-          <UserList users={users}>
-            {users.map(user => (
-              <div key={user.id}>
-                <span>{user.name}</span>
-                <DeleteUserButton userId={user.id} deleteUser={deleteUser} />
-              </div>
-            ))}
-          </UserList>
+          <h2>Lista de Usuarios</h2>
+          <UserList users={users} deleteUser={deleteUser} />
         </section>
         <section className="add-user-form">
           <h2>Agregar Nuevo Usuario</h2>

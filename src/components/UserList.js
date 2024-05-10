@@ -1,15 +1,20 @@
-import React from 'react';
- import UserInterface from '../interfaces/UserInterface';
- const UserList = ({ users }) => {
+// eslint-disable-next-line
+import React from 'react'; // eslint-disable-line no-unused-vars
+import DeleteUserButton from './DeleteUserButton';
+
+const UserList = ({ users, deleteUser }) => {
   return (
     <div>
-      <h2>Lista de Usuarios</h2>
       <ul>
-        {users.map((user, index) => (
-          <li key={index}>{user.name}</li>
+        {users.map((user) => (
+          <li key={user.id}>
+            {user.name}
+            <DeleteUserButton userId={user.id} deleteUser={deleteUser} />
+          </li>
         ))}
       </ul>
     </div>
   );
- };
- export default UserList;
+};
+
+export default UserList;
