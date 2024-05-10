@@ -58,7 +58,7 @@ El proyecto se organiza de la siguiente manera:
 
 ### Autor
 
-Este proyecto fue desarrollado por [Tu Nombre](https://github.com/jpiedramma).
+Este proyecto fue desarrollado por [Tu Nombre](https://github.com/jpiedramacas).
 
 ### Licencia
 
