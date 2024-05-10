@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+**Administrador de Usuarios - Aplicación React**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto es un simple administrador de usuarios desarrollado en React. Permite a los usuarios agregar nuevos usuarios, eliminar usuarios existentes y muestra estadísticas básicas sobre la cantidad total de usuarios.
 
-## Available Scripts
+### Funcionalidades
 
-In the project directory, you can run:
+1. **Agregar Usuarios**
+   - Los usuarios pueden agregar nuevos usuarios utilizando el formulario de agregación provisto.
+   - Para agregar un usuario, simplemente ingresan el nombre y hacen clic en el botón "Agregar Usuario".
 
-### `npm start`
+2. **Eliminar Usuarios**
+   - Los usuarios existentes pueden ser eliminados individualmente haciendo clic en el botón "Eliminar" junto a su nombre en la lista de usuarios.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. **Contador de Usuarios**
+   - Se muestra en tiempo real la cantidad total de usuarios en la lista.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Estructura del Proyecto
 
-### `npm test`
+El proyecto se organiza de la siguiente manera:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **`src/components`**: Contiene los componentes React reutilizables utilizados en la aplicación.
+  - `AddUserForm.js`: Componente para agregar nuevos usuarios.
+  - `DeleteUserButton.js`: Componente para eliminar usuarios.
+  - `UserCounter.js`: Componente para mostrar el contador de usuarios.
+  - `UserList.js`: Componente para mostrar la lista de usuarios.
 
-### `npm run build`
+- **`App.js`**: Componente principal de la aplicación que gestiona el estado de los usuarios y renderiza los componentes.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **`App.css`**: Estilos CSS para la aplicación.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Uso
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clona este repositorio en tu máquina local.
+   ```
+   git clone https://github.com/tu_usuario/administrador-usuarios-react.git
+   ```
 
-### `npm run eject`
+2. Navega al directorio del proyecto.
+   ```
+   cd administrador-usuarios-react
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Instala las dependencias.
+   ```
+   npm install
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Inicia la aplicación.
+   ```
+   npm start
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+5. Abre tu navegador y visita `http://localhost:3000` para ver la aplicación en funcionamiento.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Contribuir
 
-## Learn More
+¡Las contribuciones son bienvenidas! Si encuentras algún error, tienes alguna sugerencia de mejora o quieres agregar nuevas características, no dudes en abrir un issue o enviar un pull request.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Autor
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Este proyecto fue desarrollado por [Tu Nombre](https://github.com/jpiedramma).
 
-### Code Splitting
+### Licencia
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para obtener más detalles.
