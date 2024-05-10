@@ -1,8 +1,7 @@
-// TodoList.jsx
 import React from 'react';
 import TodoItem from './TodoItem';
 
-const TodoList = ({ todos, onDelete, onEdit }) => {
+const TodoList = ({ todos, onDelete, onEdit, onDuplicate }) => {
   return (
     <ul>
       {todos.map((todo, index) => (
@@ -11,7 +10,8 @@ const TodoList = ({ todos, onDelete, onEdit }) => {
           index={index}
           todo={todo}
           onDelete={onDelete}
-          onEdit={onEdit} // Asegúrate de pasar onEdit correctamente
+          onEdit={onEdit}
+          onDuplicate={onDuplicate} // Asegúrate de pasar onDuplicate correctamente
         />
       ))}
     </ul>
@@ -19,4 +19,3 @@ const TodoList = ({ todos, onDelete, onEdit }) => {
 };
 
 export default TodoList;
-

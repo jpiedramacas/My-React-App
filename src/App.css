@@ -1,4 +1,3 @@
-/* App.css */
 body {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
@@ -68,7 +67,8 @@ li {
 }
 
 button.edit-btn,
-button.delete-btn {
+button.delete-btn,
+button.duplicate-btn { /* Agrega los estilos para el botón de duplicar */
   color: #fff;
   border: none;
   padding: 12px 24px;
@@ -83,4 +83,8 @@ button.edit-btn:hover {
 
 button.delete-btn:hover {
   background-color: #cc0000; /* Rojo */
+}
+
+button.duplicate-btn:hover {
+  background-color: #800080; /* Morado */
 }

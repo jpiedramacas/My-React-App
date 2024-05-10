@@ -1,7 +1,6 @@
-// TodoItem.jsx
 import React, { useState } from 'react';
 
-const TodoItem = ({ todo, index, onDelete, onEdit }) => {
+const TodoItem = ({ todo, index, onDelete, onEdit, onDuplicate }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editedText, setEditedText] = useState(todo);
 
@@ -12,6 +11,10 @@ const TodoItem = ({ todo, index, onDelete, onEdit }) => {
   const handleSaveEdit = () => {
     onEdit(index, editedText);
     setIsEditing(false);
+  };
+
+  const handleDuplicate = () => {
+    onDuplicate(index);
   };
 
   return (
@@ -31,6 +34,7 @@ const TodoItem = ({ todo, index, onDelete, onEdit }) => {
           <div>
             <button onClick={handleEdit} className="edit-btn">Editar</button>
             <button onClick={() => onDelete(index)} className="delete-btn">Eliminar</button>
+            <button onClick={handleDuplicate} className="duplicate-btn">Duplicar</button> {/* Agrega el botón Duplicar */}
           </div>
         </>
       )}
@@ -39,4 +43,3 @@ const TodoItem = ({ todo, index, onDelete, onEdit }) => {
 };
 
 export default TodoItem;
-

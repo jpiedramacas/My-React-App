@@ -1,9 +1,9 @@
-// App.js
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
-import TodoItem from './components/TodoItem';
+// Importa TodoItem solo si se necesita
+// import TodoItem from './components/TodoItem';
 import './App.css';
 
 function App() {
@@ -36,6 +36,13 @@ function App() {
     localStorage.setItem('todos', JSON.stringify(newTodos));
   };
 
+  const handleDuplicateTodo = (index) => {
+    const newTodos = [...todos];
+    newTodos.splice(index + 1, 0, todos[index]);
+    setTodos(newTodos);
+    localStorage.setItem('todos', JSON.stringify(newTodos));
+  };
+
   return (
     <div>
       <Header />
@@ -44,7 +51,7 @@ function App() {
         todos={todos}
         onDelete={handleDeleteTodo}
         onEdit={handleEditTodo}
-        TodoItemComponent={TodoItem}
+        onDuplicate={handleDuplicateTodo}
       />
     </div>
   );
